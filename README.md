@@ -1,87 +1,65 @@
-Telecom Data Pipeline - Mediation, Rating & Billing System
+TELECOM DATA PIPELINE - MEDIATION, RATING & BILLING SYSTEM
 
+**DESCRIPTION**
 Pipeline Big Data complet pour la gestion des processus de médiation, tarification et facturation dans le secteur télécom.
 
-🎯 Objectifs
+**OBJECTIFS**
+- Appliquer les concepts Big Data dans un cas industriel réel
+- Implémenter la chaîne complète : médiation → tarification → facturation
+- Traiter de gros volumes de données en temps réel et batch
+- Détecter et gérer les anomalies et erreurs
 
-Appliquer les concepts Big Data dans un cas industriel
+**ARCHITECTURE**
+Pipeline principal : Synthetic Data Generation → Streaming Mediation → Batch Rating → Batch Billing → Reporting & Analytics
 
-Implémenter la chaîne complète : médiation → tarification → facturation
+**STACK TECHNIQUE**
+- Python - Langage principal de développement
+- Apache Spark - Traitement batch et streaming
+- Apache Kafka - Ingestion en temps réel
+- PostgreSQL - Base de données clients et catalogues
+- Docker - Containerisation et déploiement
+- Airflow - Orchestration des workflows
 
-Traiter de gros volumes de données en temps réel et batch
+**FONCTIONNALITÉS PRINCIPALES**
 
-Détecter et gérer les anomalies et erreurs
+**1. Génération de données synthétiques**
+   - Production de CDR/EDR réalistes (voix, SMS, données)
+   - Génération d'anomalies contrôlées (doublons, champs manquants, données corrompues)
+   - Contrôle du volume et distribution des services
 
-🏗️ Architecture
+**2. Médiation en streaming**
+   - Ingestion temps réel via Kafka
+   - Normalisation et validation des données
+   - Détection des doublons et gestion des erreurs
+   - Filtrage des enregistrements invalides
 
-Pipeline principal :
+**3. Tarification batch**
+   - Application des règles tarifaires complexes
+   - Gestion des plans produits et promotions
+   - Modificateurs temporels et géographiques
+   - Calcul des coûts par service
 
-Synthetic Data Generation → Streaming Mediation → Batch Rating → Batch Billing → Reporting & Analytics
+**4. Facturation batch**
+   - Agrégation des charges par client et cycle
+   - Application des taxes et frais réglementaires
+   - Génération de factures (JSON, XML, PDF)
+   - Gestion des quotas et unités gratuites
 
-💻 Stack Technique
+**5. Reporting & Analytics**
+   - Tableaux de bord de consommation client
+   - KPI revenue et performance business
+   - Monitoring des performances du pipeline
+   - Analytics des patterns d'utilisation
 
-Python
+**STRUCTURE DES DONNÉES**
+- Base Clients : profils, abonnements, informations de facturation
+- Catalogue Produits : services, unités, règles de pricing
+- Enregistrements : CDR (voix), EDR (data), métadonnées techniques
 
-Apache Spark (Batch & Streaming)
+**PRÉREQUIS SYSTÈME**
+- Python 3.8+
+- Apache Spark 3.0+
+- Apache Kafka 2.8+
+- PostgreSQL 13+
 
-Apache Kafka (Ingestion en temps réel)
 
-PostgreSQL (Base de données clients & catalogues)
-
-Docker (Containerisation)
-
-Airflow (Orchestration des workflows)
-
-⚙️ Fonctionnalités
-
-Génération de données synthétiques
-
-Voix, SMS, données
-
-Génération d’anomalies (doublons, champs manquants, données corrompues)
-
-Médiation en streaming
-
-Ingestion via Kafka
-
-Normalisation et validation
-
-Détection des doublons et gestion des erreurs
-
-Tarification batch
-
-Application des règles tarifaires
-
-Gestion des plans produits, promotions et modificateurs temporels/géographiques
-
-Facturation batch
-
-Agrégation par client et cycle de facturation
-
-Application des taxes
-
-Export des factures en JSON, XML ou PDF
-
-Reporting & Analytics
-
-Tableaux de bord de consommation
-
-KPI et monitoring du pipeline
-
-🗂️ Structure des données
-
-Base Clients : profils, abonnements, informations de facturation
-
-Catalogue Produits : services, unités, règles de pricing
-
-Enregistrements : CDR (voix), EDR (data), métadonnées techniques
-
-⚡ Prérequis
-
-Python 3.8+
-
-Apache Spark 3.0+
-
-Apache Kafka 2.8+
-
-PostgreSQL 13+
